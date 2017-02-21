@@ -1,1 +1,1 @@
-<h1>Lenguaje de programación ${nombreCiudad} creado</h1>
+<h1>Lenguaje de programación ${nombreLP} creado</h1>

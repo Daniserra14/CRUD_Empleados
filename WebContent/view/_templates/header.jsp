@@ -4,7 +4,7 @@
 
 <div class="row">
 
-<img src="${baseURL}assets/img/emple.jpg" class="img-rounded  center-block" alt="Empleados trabajando" height="100">
+<%-- <img src="${baseURL}assets/img/emple.jpg" class="img-rounded  center-block" alt="Empleados trabajando" height="100"> --%>
 
 <div class="pull-right">
 

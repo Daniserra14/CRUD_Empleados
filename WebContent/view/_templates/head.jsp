@@ -10,7 +10,7 @@
 	<link href="${baseURL}assets/css/bootstrap.min.css" rel="stylesheet">
 	<script src="${baseURL}assets/js/jquery.min.js"></script>
 	<script src="${baseURL}assets/js/bootstrap.min.js"></script>
-	<title>.:CRUD empleados:.</title>
+	<title>CRUD empleados</title>
 </head>
 <body onload="${empty HEADonload?'':HEADonload}">
 <div class="container">

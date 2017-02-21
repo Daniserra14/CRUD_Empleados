@@ -16,7 +16,7 @@
 		<property name="hibernate.enable_lazy_load_no_trans">true</property>
 		
 		<mapping class="beans.Ciudad"/>
-		<mapping class="beans.LP"/>
+		<mapping class="beans.Lp"/>
 		<mapping class="beans.Empleado"/>
 	</session-factory>
 </hibernate-configuration>

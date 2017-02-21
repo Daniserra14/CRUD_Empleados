@@ -2,28 +2,26 @@ package beans;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
-public class Ciudad {
+public class Lp {
 	private Long id;
-	private Collection<Empleado> empleados;
 	private String nombre;
+	private Collection<Empleado> empleados;
 
-	public Ciudad() {
-		this.empleados = new ArrayList<Empleado>();
+	public Lp() {
+		this.empleados=new ArrayList<Empleado>();
 	}
-
-	public Ciudad(String nombre) {
+	
+	public Lp(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.empleados = new ArrayList<Empleado>();
+		this.empleados=new ArrayList<Empleado>();
 	}
 
 	@Id
@@ -37,7 +35,7 @@ public class Ciudad {
 		return nombre;
 	}
 
-	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.LAZY, mappedBy = "ciudad")
+	@ManyToMany(mappedBy="lps")
 	public Collection<Empleado> getEmpleados() {
 		return empleados;
 	}
@@ -57,12 +55,11 @@ public class Ciudad {
 	public void addToEmpleados(Empleado empleado) {
 		this.empleados.add(empleado);
 	}
-
+	
 	@Override
 	public String toString() {
-		return "CIU:" + this.nombre;
+		return "LP:"+this.nombre;
 	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -79,7 +76,7 @@ public class Ciudad {
 			return false;
 		if (!(obj instanceof Ciudad))
 			return false;
-		Ciudad other = (Ciudad) obj;
+		Lp other = (Lp) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -88,4 +85,5 @@ public class Ciudad {
 		return true;
 	}
 
+	
 }

@@ -18,15 +18,15 @@ public class Empleado {
 	private String password;
 	private String telefono;
 	private Ciudad ciudad;
-	private Collection<LP> lps;
+	private Collection<Lp> lps;
 	
 
 	public Empleado() {
-		this.lps=new ArrayList<LP>();
+		this.lps=new ArrayList<Lp>();
 	}
 
 	public Empleado(String nombre, String apellido1, String apellido2, String password, String telefono, Ciudad ciudad,
-			Collection<LP> lps) {
+			Collection<Lp> lps) {
 		super();
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
@@ -38,8 +38,8 @@ public class Empleado {
 		this.ciudad.addToEmpleados(this);
 		
 		this.lps = lps;
-		for (LP lp:lps) {
-			//lp.addToEmpleados(this);
+		for (Lp lp:lps) {
+			lp.addToEmpleados(this);
 		}
 	}
 
@@ -75,7 +75,7 @@ public class Empleado {
 	}
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	public Collection<LP> getLps() {
+	public Collection<Lp> getLps() {
 		return lps;
 	}
 
@@ -108,8 +108,39 @@ public class Empleado {
 		this.ciudad = ciudad;
 	}
 
-	public void setLps(Collection<LP> lps) {
+	public void setLps(Collection<Lp> lps) {
 		this.lps = lps;
 	}
+	
+	@Override
+	public String toString() {
+		return ("EMP:"+this.nombre+" "+this.apellido1);
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Ciudad))
+			return false;
+		Empleado other = (Empleado) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
 	
 }

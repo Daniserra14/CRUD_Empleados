@@ -20,4 +20,8 @@ public class Ciudad_Model extends Model {
 	public List<Ciudad> getTodas() {
 		return ss.createQuery("from Ciudad").list();
 	}
+
+	public Ciudad getCiudadById(long id) {
+		return ss.get(Ciudad.class, id);
+	}
 }
