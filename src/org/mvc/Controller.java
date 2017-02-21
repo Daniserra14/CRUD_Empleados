@@ -28,7 +28,7 @@ public class Controller extends HttpServlet {
     	String URI = request.getRequestURI();
     	this.baseURL = request.getRequestURL().toString().substring(0,
 				request.getRequestURL().toString().length() - request.getRequestURI().length()) + request.getContextPath()
-				+"/";
+				+"";
     	this.request.setAttribute("baseURL",this.baseURL);
     	
     	String accion;
