@@ -26,7 +26,9 @@ public class Controller extends HttpServlet {
     	this.request = request;
     	this.response = response;
     	String URI = request.getRequestURI();
-    	this.baseURL = "http://localhost:8080/"+URI.split("/")[1];
+    	this.baseURL = request.getRequestURL().toString().substring(0,
+				request.getRequestURL().toString().length() - request.getRequestURI().length()) + request.getContextPath()
+				+"/";
     	this.request.setAttribute("baseURL",this.baseURL);
     	
     	String accion;
