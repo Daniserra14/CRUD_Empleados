@@ -6,7 +6,7 @@ import org.hibernate.Transaction;
 import org.mvc.Model;
 
 import beans.Ciudad;
-import beans.Lp;;
+import beans.Lp;
 
 public class LP_Model extends Model {
 	public void guardarLP(Lp lp){
@@ -17,7 +17,7 @@ public class LP_Model extends Model {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Ciudad> getTodas() {
+	public List<Lp> getTodas() {
 		return ss.createQuery("from Lp").list();
 	}
 

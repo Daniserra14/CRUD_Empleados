@@ -1,4 +1,6 @@
-package controller;
+	package controller;
+
+import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -13,7 +15,7 @@ import model.Ciudad_Model;
 @WebServlet({"/ciudad","/ciudad/","/ciudad/*"})
 public class Ciudad_Controller extends Controller {
     public void indexGet(){
-    	crearGet();
+    	listarGet();
     }
 
     public void crearGet(){
@@ -30,5 +32,13 @@ public class Ciudad_Controller extends Controller {
     	datos.put("nombreCiudad", nombre);
     	view("ciudad/crearPost.jsp");
     	
+    }
+    
+    public void listarGet(){
+    	Ciudad_Model ciudadModel = new Ciudad_Model();
+    	List<Ciudad> ciudades = ciudadModel.getTodas();
+    	
+    	datos.put("ciudades", ciudades);
+    	view("ciudad/listar.jsp");
     }
 }

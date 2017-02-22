@@ -30,7 +30,7 @@ public class Empleado_Controller extends Controller{
     	datos.put("ciudades", ciudades);
     	
     	LP_Model lpModel = new LP_Model();
-    	List<Ciudad> lps = lpModel.getTodas();
+    	List<Lp> lps = lpModel.getTodas();
     	datos.put("lps", lps);
     	
     	view("empleado/crear.jsp");
@@ -58,15 +58,24 @@ public class Empleado_Controller extends Controller{
     	
     	Empleado empleado = new Empleado(nombre, ape1, ape2, pwd, tlf, ciudad, lps);
     	try {
-    		//DA ERROR AL GUARDAR EL EMPLEADO!!!!
+    		//HAY QUE HACER DROP A EMPLEADO_LP Y EMPLEADO PARA QUE LAS CREE DE NUEVO Y FUNCIONE
 			empleadoModel.guardarEmpleado(empleado);
 			datos.put("nombreCompletoEmpleado", nombre+" "+ape1+" "+ape2);
 	    	view("empleado/crearPost.jsp");
 		} catch (Exception e) {
 			System.out.println("Error al guardar el empleado");
+			System.out.println(e.getCause());
 			e.printStackTrace();
 		}
     	
     	
+    }
+    
+    public void listarGet(){
+    	Empleado_Model empleadoModel = new Empleado_Model();
+    	List<Empleado> empleados = empleadoModel.getTodos();
+    	
+    	datos.put("empleados", empleados);
+    	view("empleado/listar.jsp");    	
     }
 }

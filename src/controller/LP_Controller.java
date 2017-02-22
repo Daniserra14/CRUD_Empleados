@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.servlet.annotation.WebServlet;
 
 import org.mvc.Controller;
@@ -10,7 +12,7 @@ import model.LP_Model;
 @WebServlet({"/lp","/lp/","/lp/*"})
 public class LP_Controller extends Controller {
 	public void indexGet(){
-		crearGet();
+		listarGet();
 	}
 
 	public void crearGet() {
@@ -25,5 +27,13 @@ public class LP_Controller extends Controller {
 		
 		datos.put("nombreLP", nombre);
 		view("lp/crearPost.jsp");
+	}
+	
+	public void listarGet(){
+		LP_Model lpModel = new LP_Model();
+		List<Lp> lps = lpModel.getTodas();
+		
+		datos.put("lps",lps);
+		view("lp/listar.jsp");
 	}
 }
