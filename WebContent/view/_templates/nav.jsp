@@ -13,8 +13,6 @@
 		
 		  <?php if (isset($header['empleado']['nombre'])): ?>
 		  <li><a href="${baseURL}empleado/crear">Crear</a></li>
-		  <li><a href="${baseURL}empleado/modificar">Modificar</a></li>
-		  <li><a href="${baseURL}empleado/borrar">Borrar</a></li>
 		  <?php endif;?>
 		  
 		  <li><a href="${baseURL}empleado/listar">Listar</a></li>
@@ -29,8 +27,6 @@
 		<ul class="dropdown-menu">
 		  <?php if (isset($header['empleado']['nombre'])): ?>
 		  <li><a href="${baseURL}ciudad/crear">Crear</a></li>
-		  <li><a href="${baseURL}ciudad/modificar">Modificar</a></li>
-		  <li><a href="${baseURL}ciudad/borrar">Borrar</a></li>
 		  <?php endif;?>
 
 		  <li><a href="${baseURL}ciudad/listar">Listar</a></li>
@@ -44,8 +40,6 @@
 		<ul class="dropdown-menu">
 		  <?php if (isset($header['empleado']['nombre'])): ?>
 		  <li><a href="${baseURL}lp/crear">Crear</a></li>
-		  <li><a href="${baseURL}lp/modificar">Modificar</a></li>
-		  <li><a href="${baseURL}lp/borrar">Borrar</a></li>
 		  <?php endif;?>
 		  <li><a href="${baseURL}lp/listar">Listar</a></li>
 	     </ul>

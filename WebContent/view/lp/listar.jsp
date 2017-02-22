@@ -8,7 +8,10 @@
     </thead>
     <tbody>
     	<c:forEach var="lp" items="${lps}">
-    		<tr><td> ${lp.nombre }</td></tr>
+    		<tr>
+    			<td> ${lp.nombre }</td>
+    			<td><button><span class="glyphicon glyphicon-pencil"></span></button> <button><span class="glyphicon glyphicon-remove"></span></button></td>
+    		</tr>
     	</c:forEach>
     </tbody>
 </table>

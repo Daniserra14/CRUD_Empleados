@@ -24,6 +24,7 @@
     					${lp.nombre} |
     				</c:forEach> 
     			</td>
+    			<td><button><span class="glyphicon glyphicon-pencil"></span></button> <button><span class="glyphicon glyphicon-remove"></span></button></td>
     		</tr>
     	</c:forEach>
     </tbody>
