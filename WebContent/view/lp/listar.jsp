@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <h1>Listar Lenguajes de programación</h1>
+<label>Filtro: </label>
+<input class="form-control" type="text"><br>
 <table class="table table-hover table-stripped">
 	<thead>
       <tr>

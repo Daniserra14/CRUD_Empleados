@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <h1>Listar ciudades</h1>
+<label>Filtro: </label>
+<input type="text">
 <table class="table table-hover table-stripped">
 	<thead>
       <tr>
@@ -24,7 +26,10 @@
     					${lp.nombre} |
     				</c:forEach> 
     			</td>
-    			<td><button><span class="glyphicon glyphicon-pencil"></span></button> <button><span class="glyphicon glyphicon-remove"></span></button></td>
+    			<td>
+    				<button><span class="glyphicon glyphicon-pencil"></span></button> 
+    				<button><span class="glyphicon glyphicon-remove"></span></button>
+    			</td>
     		</tr>
     	</c:forEach>
     </tbody>

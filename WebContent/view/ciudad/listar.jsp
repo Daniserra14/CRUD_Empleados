@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <h1>Listar ciudades</h1>
+<label>Filtro: </label>
+<input type="text">
 <table class="table table-hover table-stripped">
 	<thead>
       <tr>
